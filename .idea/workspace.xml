@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e981ce0b-b1d4-4f1a-98fc-575258bf3758" name="Default" comment="fff">
+    <list default="true" id="e981ce0b-b1d4-4f1a-98fc-575258bf3758" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JavaPractice.iws" />
@@ -342,7 +342,13 @@
       <option name="project" value="LOCAL" />
       <updated>1426724589633</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fff">
+      <created>1426724876362</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1426724876362</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
