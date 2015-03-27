@@ -5,18 +5,19 @@ import java.util.Scanner;
 /**
  * Created by Timo on 15. 3. 26..
  */
-public class While {
+public class Break {
     public static void main(String args[])
     {
         Scanner scanner = new Scanner(System.in);
-        int menu;
+        int menu =0;
 
         //<게임메뉴>
         //1. 공격
         //2. 수비
         //3. 종료
 
-        do {
+        while (menu != 3)
+        {
             System.out.println("----------Welcome to Dimigo------------");
             System.out.println("1. 점호열외");
             System.out.println("2. 무단외출");
@@ -40,6 +41,6 @@ public class While {
                     break;
 
             }
-        }while(menu != 3);
+        }
     }
 }
