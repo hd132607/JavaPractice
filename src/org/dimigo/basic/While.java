@@ -1,5 +1,7 @@
 package org.dimigo.basic;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 /**
@@ -8,6 +10,7 @@ import java.util.Scanner;
 public class While {
     public static void main(String args[])
     {
+        /*
         Scanner scanner = new Scanner(System.in);
         int menu;
 
@@ -41,5 +44,10 @@ public class While {
 
             }
         }while(menu != 3);
+        */
+
     }
+
+
+
 }
