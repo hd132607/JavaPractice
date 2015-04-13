@@ -2,6 +2,13 @@ package org.dimigo.oop;
 
 /**
  * Created by codertimo on 2015. 4. 13..
+ * org.dimigo.oop
+ * <p>
+ * 1. 개요 : Car 객체를 이용한 Test
+ * 2. 작성일 : 2015/4/13
+ *
+ * @version : 1.0
+ * @author  : JunseongKim
  */
 public class CarTest {
     public static void main(String argv[])
@@ -45,6 +52,4 @@ public class CarTest {
         System.out.println("최대속도 : " + sm7.getMaxSpeed());
         System.out.println("가격 : "+String.format("%,d", sm7.getPrice()));
     }
-
-
 }

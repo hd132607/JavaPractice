@@ -2,6 +2,13 @@ package org.dimigo.oop;
 
 /**
  * Created by codertimo on 2015. 4. 13..
+ * org.dimigo.oop
+ * <p>
+ * 1. 개요 : Car 객체
+ * 2. 작성일 : 2015/4/13
+ *
+ * @version : 1.0
+ * @author  : JunseongKim
  */
 public class Car {
     private String company;
