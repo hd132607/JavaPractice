@@ -17,6 +17,16 @@ public class Car {
     private int maxSpeed;
     private int price;
 
+    public Car(String company, String model, String color, int maxSpeed, int price){
+        this.company = company;
+        this.model = model;
+        this.color = color;
+        this.maxSpeed = maxSpeed;
+        this.price = price;
+    }
+    public Car()
+    {
+    }
     public void setCompany(String company) {
         this.company = company;
     }
