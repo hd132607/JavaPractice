@@ -1,21 +1,32 @@
 package org.dimigo.oop;
 
 /**
- * Created by codertimo on 2015. 4. 13..
+ * Created by codertimo on 2015. 4. 17..
  * org.dimigo.oop
  * <p>
- * 1. 개요 : Car 객체
- * 2. 작성일 : 2015/4/13
+ * 1. 개요 :
+ * 2. 작성일 : ${date}
  *
  * @version : 1.0
- * @author  : JunseongKim
+ * @auther : JunseongKim
  */
-public class Car {
+public class Car3 {
     private String company;
     private String model;
     private String color;
     private int maxSpeed;
     private int price;
+
+    public Car3(String company, String model, String color, int maxSpeed, int price){
+        this.company = company;
+        this.model = model;
+        this.color = color;
+        this.maxSpeed = maxSpeed;
+        this.price = price;
+    }
+    public Car3()
+    {
+    }
 
     public void setCompany(String company) {
         this.company = company;
