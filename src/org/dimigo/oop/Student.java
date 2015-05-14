@@ -44,13 +44,17 @@ public class Student {
     public void print()
     {
         this.Loging("<<학생정보출력>>");
-        this.Loging("1. 학번: "+this.gisu+this.grade+String.format("%02d",this.number));
+        this.Loging("1. 학번: "+getHackBon());
         this.Loging("2. 이름: "+this.name);
         this.Loging("3. 주소: "+this.address);
-        this.Loging("4. 휴대폰 번호: "+this.phone);
+        this.Loging("4. 휴대폰 번호: " + this.phone);
     }
     private void Loging(String string)
     {
         System.out.println(string);
+    }
+    private String getHackBon()
+    {
+        return ""+this.gisu+this.grade+String.format("%02d",this.number);
     }
 }
