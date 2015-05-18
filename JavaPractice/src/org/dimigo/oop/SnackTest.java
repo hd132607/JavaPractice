@@ -1,7 +1,5 @@
 package org.dimigo.oop;
 
-import java.util.ArrayList;
-
 /**
  * Created by codertimo on 15. 5. 18..
  */
@@ -21,7 +19,7 @@ public class SnackTest {
             snack.printSnack();
 
         }
-        System.out.println(String.format("총 구매 금액 :%,d원",totalPrice));
+        System.out.println(String.format("총 구매 금액 :%,d원", totalPrice));
 
     }
 }
