@@ -20,4 +20,8 @@ public class Circle extends Figure{
     {
         return radius*radius*Math.PI;
     }
+    protected void printcenter()
+    {
+        super.printCenter();
+    }
 }

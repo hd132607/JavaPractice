@@ -19,8 +19,12 @@ public class Rectangle extends Figure {
         this.width = width;
         this.height = height;
     }
-    protected double calcArea()
-    {
-        return width*height;
+    protected double calcArea() {
+        return width * height;
     }
+    protected void printcenter()
+    {
+        super.printCenter();
+    }
+
 }
