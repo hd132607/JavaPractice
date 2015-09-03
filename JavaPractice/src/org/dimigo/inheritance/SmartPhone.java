@@ -3,7 +3,7 @@ package org.dimigo.inheritance;
 /**
  * Created by codertimo on 15. 8. 28..
  */
-public class SmartPhone {
+public abstract class SmartPhone {
 
     private String model;
     private String company;
@@ -24,18 +24,8 @@ public class SmartPhone {
     public void turnOff(){
         System.out.println(this.model +"의 전원을 끕니다");
     }
-    public void pay(){
-        if(this instanceof IPhone)
-        {
-            IPhone iPhone = (IPhone)this;
-            iPhone.pay();
-        }
-        else if(this instanceof Galaxy)
-        {
-            Galaxy galaxy = (Galaxy)this;
-            galaxy.pay();
-        }
-    }
+    public abstract void pay();
+
     public void useSpecialFunction(){
         if(this instanceof IPhone)
         {
@@ -48,6 +38,7 @@ public class SmartPhone {
             galaxy.useWirelessCharging();
         }
     }
+
     public String toString() {
         return "모델명 : " + this.model + " 제조사 : " + this.company + "가격 : " + this.price + "원";
     }
