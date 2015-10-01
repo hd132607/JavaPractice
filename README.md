@@ -4,4 +4,4 @@
 
 ##실습 과제 소스
 
-./src/org/dimigo
+[소스 디렉토리](./src/org/dimigo)
