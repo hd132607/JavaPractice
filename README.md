@@ -4,4 +4,4 @@
 
 ##실습 과제 소스
 
-[소스 디렉토리](./src/org/dimigo)
+[소스 디렉토리](https://github.com/hd132607/JavaPractice/tree/master/JavaPractice/src/org/dimigo)
