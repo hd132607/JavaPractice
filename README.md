@@ -6,7 +6,8 @@
 
 [소스 전체 디렉토리](https://github.com/hd132607/JavaPractice/tree/master/JavaPractice/src/org/dimigo)
 
-1. Java 기본 메소드
+1. Java Basic Method
+Java Basic Method Example and assignment
   1. [Primitive/Obejct Data Type](https://github.com/hd132607/JavaPractice/blob/master/JavaPractice/src/org/dimigo/basic/PrimitiveDataType.java)
   2. [TypeCasting](https://github.com/hd132607/JavaPractice/blob/master/JavaPractice/src/org/dimigo/basic/TypeCasting.java)
   3. [If/Else](https://github.com/hd132607/JavaPractice/blob/master/JavaPractice/src/org/dimigo/basic/IfElse.java)
@@ -15,7 +16,8 @@
   6. [Switch](https://github.com/hd132607/JavaPractice/blob/master/JavaPractice/src/org/dimigo/basic/Switch.java)
   7. [Object Method](https://github.com/hd132607/JavaPractice/blob/master/JavaPractice/src/org/dimigo/basic/Car.java)
   
-2. 객체지향 프로그래밍
+2. Object-Oriented Programming
+Object-Oriented Programming Example and assignment
 	1. [Book](https://github.com/hd132607/JavaPractice/tree/master/JavaPractice/src/org/dimigo/oop/Book.java)
 	2. [BookTest](https://github.com/hd132607/JavaPractice/tree/master/JavaPractice/src/org/dimigo/oop/BookTest.java)
 	3. [Car](https://github.com/hd132607/JavaPractice/tree/master/JavaPractice/src/org/dimigo/oop/Car.java)
