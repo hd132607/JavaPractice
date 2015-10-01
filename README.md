@@ -10,9 +10,10 @@
   1. [Primitive/Obejct Data Type](https://github.com/hd132607/JavaPractice/blob/master/JavaPractice/src/org/dimigo/basic/PrimitiveDataType.java)
   2. [TypeCasting](https://github.com/hd132607/JavaPractice/blob/master/JavaPractice/src/org/dimigo/basic/TypeCasting.java)
   3. [If/Else](https://github.com/hd132607/JavaPractice/blob/master/JavaPractice/src/org/dimigo/basic/IfElse.java)
-  4. For
-  5. While
-  6. Switch
-  7. Object Method
+  4. [For](https://github.com/hd132607/JavaPractice/blob/master/JavaPractice/src/org/dimigo/basic/For.java)
+  5. [While](https://github.com/hd132607/JavaPractice/blob/master/JavaPractice/src/org/dimigo/basic/While.java)
+  6. [Switch](https://github.com/hd132607/JavaPractice/blob/master/JavaPractice/src/org/dimigo/basic/Switch.java)
+  7. [Object Method](https://github.com/hd132607/JavaPractice/blob/master/JavaPractice/src/org/dimigo/basic/Car.java)
+  
 2. 객체 지향
   1. 
