@@ -1,6 +1,21 @@
+
+/**
+ * Made by : Jusneong Kim
+ *
+ * The MIT License (MIT)
+
+ * Copyright (c) <2015> <Junseong Kim>
+
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ */
+
+
 package org.dimigo.collection;
-
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -14,8 +29,6 @@ public class MelonChartJSONParser {
 		Melon melon = new Melon();
 
 		ArrayList<Song> songs = new ArrayList<>();
-		// JSON String을 Parsing하여 Melon 객체에 담기
-		// 필요한 데이터만 가져오기 (노래제목, 가수명)
 
 		try {
 			JSONParser jsonParser = new JSONParser();
@@ -24,11 +37,6 @@ public class MelonChartJSONParser {
 			JSONObject melonJson = (JSONObject)jsonObject.get("melon");
 			JSONObject songJson = (JSONObject)melonJson.get("songs");
 			JSONArray songsJsonArray = (JSONArray)songJson.get("song");
-
-//			melon.setCount((int)melonJson.get("count"));
-//			melon.setMenuId((int) melonJson.get("menuId"));
-//			melon.setPage((int) melonJson.get("page"));
-//			melon.setTotalPages((int) melonJson.get("totalPages"));
 
 			for(Object song : songsJsonArray)
 			{
@@ -45,11 +53,10 @@ public class MelonChartJSONParser {
 				{
 					JSONObject indexArtist = (JSONObject)ob;
 					String artist_name = (String)indexArtist.get("artistName");
-//					int artist_id = (int)indexArtist.get("artistId");
 
 					Artist artist = new Artist();
 					artist.setArtistName(artist_name);
-//					artist.setArtistId(artist_id);
+
 					artists.add(artist);
 				}
 
