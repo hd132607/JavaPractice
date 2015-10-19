@@ -1,46 +1,94 @@
 package org.dimigo.collection;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.IOException;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.ResponseHandler;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
 
 /**
- * Created by codertimo on 15. 9. 24..
+ * <pre>
+ * org.dimigo.collection
+ *   |_ MelonChart
+ * 
+ * 1. 개요 : 
+ * 2. 작성일 : 2015. 9. 26.
+ * </pre>
+ *
+ * @author		: 이름
+ * @version		: 1.0
  */
 public class MelonChart {
-    public static void main(String args[])
-    {
-        ArrayList<Music> musics = new ArrayList<>();
-        musics.add(new Music("바람이나 좀 쐐","개리"));
-        musics.add(new Music("보통연애", "박경"));
-        musics.add(new Music("취향저격", "iKon"));
 
-        System.out.println("-- << 멜론 챠트 >> --");
-        printList(musics);
+	private static final String APP_KEY = "4ce8bb31-9934-376b-8a64-0b5922ad9f71";
+	private static final String MELON_OPEN_URL = "http://apis.skplanetx.com/melon/charts/realtime?";	
+	private static final String QUERY_STRING = "count=10&page=1&version=1";
+	
+	public static void main(String[] args) {		
+		CloseableHttpClient httpclient = HttpClients.createDefault();
+		
+	    try {
+	    	HttpGet httpget = new HttpGet(MELON_OPEN_URL + QUERY_STRING);
+	        
+	        httpget.setHeader("appKey", APP_KEY);
+	        
+	        System.out.println("Executing request : " + httpget.getRequestLine());
 
-        System.out.println("-- << 2위 곡 추가 >> --");
-        musics.add(1,new Music("레옹", "이유갓지"));
-        printList(musics);
+	        // Create a custom response handler
+	        ResponseHandler<String> responseHandler = new ResponseHandler<String>() {
+	            @Override
+	            public String handleResponse(
+	                    final HttpResponse response) throws ClientProtocolException, IOException {
+	                int status = response.getStatusLine().getStatusCode();
+	                if (status >= 200 && status < 300) {
+	                    HttpEntity entity = response.getEntity();
+	                    return entity != null ? EntityUtils.toString(entity) : null;
+	                } else {
+	                    throw new ClientProtocolException("Unexpected response status: " + status);
+	                }
+	            }
 
-        System.out.println("-- << 3위 곡 변경 >> --");
-        musics.get(2).setTitle("맙소사");
-        musics.get(2).setSiger("황태지");
-        printList(musics);
+	        };
+	        
+	        String responseBody = httpclient.execute(httpget, responseHandler);
+	        System.out.println("------------------------------------------------");
+	        System.out.println(responseBody);
+	        
+	        Melon melon = MelonChartJSONParser.parse(responseBody);
+	        System.out.println(melon);
+	        
+	        /***************************************
+	         * 노래 순위대로 출력하기
+	         * 1. No Make Up - Zion.T 
+	         * 2. I (Feat. 버벌진트) - 태연 (Taeyeon) 
+	         * 3. 또 다시 사랑 - 임창정 
+	         ***************************************/
 
-        System.out.println("-- << 4위 곡 삭제 >> --");
-        musics.remove(3);
-        printList(musics);
+			System.out.println("\n\n -------- 노래 순위 출력 -------");
+			int count = 1;
+	    	for(Song song : melon.getSongs())
+			{
+				System.out.println(count++ +". "+song.getSongName()+" - "+song.getArtists().get(0).getArtistName());
+			}
 
-        System.out.println("-- << 전체 리스트 삭제 >> --");
-        musics.clear();
-        printList(musics);
-    }
 
-    public static void printList(List<Music> musics)
-    {
-        int count=1;
-        for (Music music : musics)
-        {
-           System.out.println(""+count+++". "+music.toString());
-        }
-    }
+
+
+	    } catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+	        try {
+				httpclient.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+	    }
+
+	}
+
 }
