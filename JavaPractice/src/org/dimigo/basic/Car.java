@@ -17,7 +17,7 @@ public class Car {
     public void backward()
     {
         System.out.println("전진합니다");
-    }
+}
     public void stop()
     {
         System.out.println("전진합니다");
@@ -30,6 +30,5 @@ public class Car {
     //{
       //  System.out.println("전진합니다");
    // }
-
 
 }

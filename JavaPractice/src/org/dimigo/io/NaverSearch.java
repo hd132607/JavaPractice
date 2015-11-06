@@ -111,6 +111,7 @@ public class NaverSearch {
 				for (Movie movie : movieList)
 				{
 					String string =  count++ + ". "+ movie.getTitle()+ " - " +movie.getActors()+"\n";
+					System.out.print(string);
 					bw.write(string);
 				}
 			}
