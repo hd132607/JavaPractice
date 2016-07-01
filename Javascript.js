@@ -1,3 +1,9 @@
+
+/**
+ Created by Junseong Kim, 2016.6.20
+ 경고 : 무단복제 및 공유를 불허합니다.
+**/
+
 //기본 문법
 <script language= "javascript" src="abc.js">
 document.write(“line 1 <br>”);

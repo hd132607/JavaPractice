@@ -1,4 +1,9 @@
 
+/**
+ Created by Junseong Kim, 2016.6.20
+ 경고 : 무단복제 및 공유를 불허합니다.
+**/
+
 var getter = $('h3').css('text-align'); //css값 가져오기
 
 $('h1').css('color','red');
@@ -23,12 +28,18 @@ $('h3:has(h1)') //h1테그를 갖고있는 엘리먼트 선택
 $('body:not(h1)') //h1이 아닌 엘리먼트들 선택
 $('tr:nth-child(3n+1)') //3n+1번째 엘리먼트들 선택
 
+//선택자 반복하기
+$('selector').each(function(index,object){
+  $(this).css('...')
+  $('selector').eq(index).css('...')
+})
+
 $('h3').filter(':odd').css('color','black').end().
        .filter(':even').css('color','yellow')
 
 $('h1').addClass('red-man') //테그에 클래스를 추가함
 $('h1').removeClass('red-man') //제거
-$('h1').toggleClass('red-man') //지정되어있으면 제거, 있지 않ㅇ면 추가
+$('h1').toggleClass('red-man') //지정되어있으면 제거, 있지 않으면 추가
 
 
 $('img').attr('src');//src의 값 가져오기
@@ -40,8 +51,7 @@ $('#switch').val('OFF'); //Value값 설정
 
 var color = ['red', 'blue', 'green'];
 //h2의 index를 넘겨주는거 같은데...
-$('h2').css('color', function(index)
-{
+$('h2').css('color', function(index){
   return color[index];
 });
 
@@ -123,7 +133,6 @@ keypress : "글자가 입력될때"
 localStorage.setItem('tag','text');
 localStorage.getItem('tag');
 
-
 //윈도우 이벤트
 'ready' : 문서 객체가 준비를 완료할 때 발생합니다.
 'load' : 문서 객체를 불러들일 때 발생합니다.
@@ -131,6 +140,20 @@ localStorage.getItem('tag');
 'resize' : 크기를 변화 시킬 때 발생합니다.
 'scroll' :스크롤 할 때 발생합니다.
 'error' :에러가 있을 때 발생합니다.
+
+mouseover : "버블링 : 큰디브 -> 작은디브 까지 이벤트가 전달"
+mouseenter : "큰디브에서만 이벤트가 발생한다."
+
+
+// 박스 내부의 좌표 가져오기
+$("#demo-box").click(function(e) {
+
+  var offset = $(this).offset();
+  var relativeX = (e.pageX - offset.left);
+  var relativeY = (e.pageY - offset.top);
+
+  // pageX,Y 전체 페이지 내에서의 좌표계
+});
 
 $(selector).preventDefault() //기본 이벤트 (예 : a테그 링크 이동) 제거
 $(selector).stopPropagation() //이벤트 전달을 제거합니다
@@ -140,3 +163,7 @@ $(selector).stopPropagation() //이벤트 전달을 제거합니다
 $('h1').on('mousedown',function(event){...}); //모든 h1에 대해서 이벤트 적용
 
 $('div').on('mousedown','h1',function(event){$(this).css('...')}); //div가 클릭되면 div안에 있는 h1에 대해서 css변경
+
+$.cookie('tag') // 쿠키 가져오기
+$.cookie('tag','value') //쿠기 setter
+$.removeCookie('tag')
